@@ -1,16 +1,58 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+	<head>
+		<title>Simple Interest Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="maindiv">
+			<header>
+				<h1>Simple Interest Calculator</h1>
+			</header>
+			<main>
+				<div>
+					<form action="javascript:void(0);" onsubmit="compute()" method="get">
+						<div class="form-group">
+							<label for="principal">Amount</label>
+							<input id="principal" type="number" />
+						</div>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+						<div class="form-group">
+							<label for="rate">Interest Rate</label>
+							<input
+								id="rate"
+								type="range"
+								min="1"
+								max="20"
+								step="0.25"
+								value="10.25"
+								onchange="updateRate();"
+							/>
+							<span class="rate" id="rate_val">10.25%</span>
+						</div>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+						<div class="form-group">
+							<label for="years">No. of Years</label>
+							<select id="years">
+								<option value="1" selected>1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</div>
+						<button type="submit">Compute Interest</button>
+						<span id="result"></span>
+					</form>
+				</div>
+			</main>
+			<footer>© This Calculator belongs to Loana Yañez</footer>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>
